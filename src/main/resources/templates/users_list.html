@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border = 1>
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>비번</th>
+			<th>이메일</th>
+			<th>등록일</th>
+			<th>조회수</th>
+		</tr>
+		<tr th:each="users :${usersList}">
+			<td>[[${users.idx}]]</td>
+			<td>[[${users.name}]]</td>
+			<td>[[${users.pass}]]</td>
+			<td>[[${users.email}]]</td>
+			<td>[[${users.regdate}]]</td>
+			<td>[[${users.cnt}]]</td>
+		</tr>
+	</table>
+</body>
+</html>
