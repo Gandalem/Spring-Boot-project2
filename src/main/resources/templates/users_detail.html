@@ -1,0 +1,23 @@
+
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+	<table class="table">
+		<tr>
+			<td th:text="${getUsers.name}">이름</td>
+		</tr>
+		<tr>
+			<td th:text="${getUsers.pass}">비번</td>
+		</tr>
+		<tr>
+			<td th:text="${getUsers.email}">이메일</td>
+		</tr>
+		<tr>
+			<td th:text="${getUsers.regdate}">현제날짜</td>
+		</tr>
+		<tr>
+			<td th:text="${getUsers.cnt}">번호</td>
+		</tr>
+	</table>
+
+</div>
+</html>

@@ -1,27 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<table border = 1>
-		<tr>
+<html layout:decorate="~{layout}">
+
+<div layout:fragment="content" class="container my-3">
+
+	
+	<table class="table">
+		<tr class="table-dark">
 			<th>번호</th>
 			<th>이름</th>
-			<th>비번</th>
-			<th>이메일</th>
 			<th>등록일</th>
 			<th>조회수</th>
 		</tr>
 		<tr th:each="users :${usersList}">
 			<td>[[${users.idx}]]</td>
-			<td>[[${users.name}]]</td>
-			<td>[[${users.pass}]]</td>
-			<td>[[${users.email}]]</td>
-			<td>[[${users.regdate}]]</td>
+			<td><a th:href="@{|/users/detail/${users.idx}|}">[[${users.name}]]</a></td>
+			<td>[[${#temporals.format(users.regdate, 'yyyy-MM-dd hh:mm')}]]</td>
 			<td>[[${users.cnt}]]</td>
 		</tr>
 	</table>
-</body>
+	
+	<div th:if="${!usersList.isEmpty()}">
+		<ul class="pagination justify-content-center">
+			<li>
+			<a th:href="@{|?page=${usersList.number-1}|}" class="page-link">이전</a>
+			</li>
+			<li th:each="page : ${#numbers.sequence(0,usersList.totalPages-1)}"
+				th:if="${page >= usersList.number-1 and page <=usersList.number +3}"
+				th:classappend="${page==usersList.number} ? 'active'" class="page=item"
+				>
+				<a th:text="${page}" class="page-link" th:href="@{|?page=${page}|}"></a>
+				</li>
+			<li>
+			<a th:href="@{|?page=${usersList.number+1}|}" class="page-link">다음</a>
+			</li>
+		</ul>
+	</div>
+	
+	<button th:onclick="|location.href='@{users/insert}'|" class="btn btn-primary my-2" >회원 등록</button>
+
+</div>	
 </html>

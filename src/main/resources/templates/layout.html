@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- 반응형 작동시킬려면 meta태그에 viewport가 있어야한다. -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0 ,shrink-to-fit=no">
+<!-- 부트스트랩 CSS 임폴트 -->
+<link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+<title>Insert title here</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+		<div class="container-fluid"> <!-- navbar 수평 정렬 -->
+			<a class="navbar-brand" href="/">SBB2</a> 
+			<button class="navbar-toggler" type="button" 
+					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false" 
+					aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- 반응형 조건 추가 -->
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!-- li 테그 수평 정렬 -->
+					<li class="nav-item"><a class="nav-link" href="#">로그인</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<th:blobk layout:fragment="content"></th:blobk>
+	
+	<script th:src="@{/bootstrap.min.js}"></script>
+</body>
+</html>
