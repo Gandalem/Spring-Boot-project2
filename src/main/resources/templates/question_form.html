@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Board Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h5 class="card-title mb-0">게시글 제목</h5>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-2">
+                  <img src="https://via.placeholder.com/150" class="img-thumbnail">
+                  <p class="text-center my-2">작성자 이름</p>
+                </div>
+                <div class="col-md-10">
+                  <p class="text-muted">작성일</p>
+                  <p>게시글 내용</p>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer text-muted d-flex justify-content-between">
+              <div>댓글 수</div>
+              <div>
+                <button type="button" class="btn btn-primary btn-sm">
+                  <i class="fas fa-thumbs-up me-1"></i>좋아요
+                </button>
+                <button type="button" class="btn btn-danger btn-sm">
+                  <i class="fas fa-thumbs-down me-1"></i>싫어요
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
